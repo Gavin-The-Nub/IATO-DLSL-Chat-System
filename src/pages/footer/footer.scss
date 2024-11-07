@@ -1,0 +1,144 @@
+.footer {
+  background-color: black;
+  color: white;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 450px;
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      img {
+        padding: 0;
+        width: 120px;
+        height: 120px;
+      }
+    }
+    .name {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .border {
+      border-bottom: 3px solid rgba(128, 128, 128, 0.267);
+      width: 56%;
+      margin-bottom: 20px;
+    }
+    .links {
+      display: flex;
+      margin-bottom: 20px;
+      a {
+        margin: 0 5px 0 5px;
+      }
+      img {
+        width: 32px;
+      }
+    }
+    .loc {
+      width: 250px;
+    }
+    .loc:hover {
+      color: rgb(0, 135, 44);
+      transition: 0.5s ease;
+    }
+  }
+
+  .right {
+    height: inherit;
+    width: calc(100% - 400px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5vw;
+
+    .affiliateTitle {
+      font-size: 18px;
+      font-weight: 700;
+      padding-top: 2vh;
+    }
+    .affiliate {
+      display: flex;
+      margin-bottom: 4vh;
+
+      img {
+        width: 140px;
+      }
+    }
+    .details {
+      display: flex;
+      align-items: start;
+
+      h2:hover {
+        color: rgb(0, 135, 44);
+        transition: 0.5s ease;
+      }
+
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 18px;
+        padding: 3px;
+        margin-bottom: 15px;
+      }
+      .leftDetails {
+        margin-right: 50px;
+      }
+      .rightDetails {
+      }
+    }
+  }
+}
+@media (max-width: 375px) {
+  .footer {
+    .left {
+      width: 380px;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+    .left {
+      .logo {
+        padding-top: 20px;
+      }
+    }
+    .right {
+      .affiliateTitle {
+        text-wrap: nowrap;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      .affiliate {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100vw;
+        padding-right: 20px;
+        img {
+          width: 100%;
+        }
+      }
+      .details {
+        width: 100vw;
+        .leftDetails {
+          width: 50vw;
+        }
+        .rightDetails {
+          width: 50vw;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,245 @@
+.admin {
+  padding-top: 5vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  height: 100vh;
+  .title {
+    font-weight: 1000;
+    font-size: x-large;
+    color: rgb(0, 135, 44);
+  }
+  .adminContainer {
+    width: 70vw;
+    height: 100%;
+  }
+
+  .adminChat {
+    display: flex;
+    background-color: rgb(0, 135, 44);
+    align-items: start;
+    justify-content: start;
+    padding: 20px;
+    margin: 20px 0px 20px 0;
+    cursor: pointer;
+    border-radius: 40px;
+
+    .l {
+      .adminChatProfile {
+        img {
+          border-radius: 50%;
+          width: 80px;
+        }
+      }
+
+      .r {
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+      }
+    }
+    .first {
+      display: flex;
+      h1 {
+        font-size: x-large;
+        font-weight: 1000;
+        color: white;
+        margin-left: 10px;
+      }
+    }
+    .recent {
+      display: flex;
+      align-items: center;
+      h1 {
+        margin: 0 5px 0 10px;
+        color: rgba(255, 255, 255, 0.871);
+        font-size: medium;
+      }
+      h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 43vw; /* Adjust width as needed */
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        font-size: medium;
+      }
+      h3 {
+        margin-left: 10px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: medium;
+      }
+    }
+  }
+
+  //user is selected
+
+  .messages {
+    .topProf {
+      display: flex;
+      background-color: rgb(0, 135, 44);
+      padding: 20px;
+      width: 100%;
+      justify-content: space-between;
+      .prof {
+        display: flex;
+        img {
+          width: 50px;
+        }
+      }
+
+      h3 {
+        font-size: x-large;
+        font-weight: 1000;
+        color: white;
+      }
+      img {
+        width: 20px;
+      }
+    }
+    .message {
+      display: flex;
+      align-items: end;
+      margin: 10px 0px 10px 0;
+      .left {
+        .chatPicBox {
+          background-color: white;
+          color: rgb(0, 135, 44);
+          width: 40px;
+          border-radius: 20px;
+          text-align: center;
+          font-weight: 1000;
+          font-size: x-large;
+          border: solid gray 1px;
+        }
+        img {
+          width: 40px;
+          border-radius: 50%;
+        }
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+
+        .top {
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
+          h1 {
+            margin-left: 10px;
+            margin-right: 10px;
+            color: rgb(0, 135, 44);
+            font-weight: 500;
+          }
+          h3 {
+            font-size: 12px;
+            color: gray;
+          }
+        }
+        .bottom {
+          background-color: rgb(214, 214, 214);
+          margin-left: 10px;
+          border-radius: 20px;
+          display: inline-flex;
+          align-items: center;
+          padding: 5px 10px;
+          max-width: 100% !important; /* Keeps the message box within the screen width */
+          word-wrap: break-word; /* Wraps long words onto the next line */
+          padding: 10px 10px 10px 15px;
+          h2 {
+            font-size: large;
+          }
+        }
+      }
+    }
+  }
+  .adminMessages {
+    flex: 1; /* Allows it to grow and take up available space */
+    padding: 10px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: calc(100vh - 28vh);
+    /* Adjust this based on your layout */
+
+    /* WebKit Browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+      width: 8px; /* Thin scrollbar width */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Light gray track color */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c1c1c1; /* Medium gray thumb color */
+      border-radius: 10px; /* Rounded edges */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #a1a1a1; /* Darker gray on hover */
+    }
+
+    /* Firefox */
+    scrollbar-width: thin; /* Sets width to thin */
+    scrollbar-color: #c1c1c1 #f1f1f1; /* Thumb color and track color */
+  }
+  .chatInput {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+
+    form {
+      width: 70vw;
+      padding: 0;
+      position: relative;
+      text-align: center;
+
+      textarea {
+        width: 100%;
+        border: solid gray 1px;
+        padding: 10px 10px 0 10px;
+        padding-right: 50px; // To avoid overlapping with the button
+        min-height: 40px; // Initial height
+        max-height: 120px; // Maximum height (adjust as needed)
+        overflow-y: hidden; // Hides the vertical scrollbar
+        box-sizing: border-box;
+        outline: none;
+        resize: none;
+        border-radius: 20px;
+        &:focus {
+          border-color: rgb(0, 135, 44); // Optional: change color on focus
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        background-color: rgb(0, 135, 44);
+        padding: 5px;
+        border-radius: 15px;
+        width: 30px;
+
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+.userMessage {
+  flex-direction: row-reverse; /* Moves the message box to the right */
+
+  .right {
+    .top {
+      justify-content: end;
+      margin-right: 30px;
+    }
+    .bottom {
+      margin-right: 10px;
+      background-color: rgb(0, 169, 56) !important;
+      color: white;
+      padding: 10px 20px 10px 20px;
+    }
+  }
+}

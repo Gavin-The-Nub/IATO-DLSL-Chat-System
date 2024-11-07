@@ -1,0 +1,90 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 5vh;
+  background-color: transparent;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  font-size: 2.3vh;
+  color: white;
+  z-index: 3;
+  .sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    color: rgba(0, 0, 0, 0.481);
+    .upperSidebar {
+      background-color: rgb(0, 135, 44);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: white;
+      height: 10vh;
+      img {
+        padding: 2vh 0vh 2vh 2vh;
+      }
+    }
+    .bottomSidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      position: relative;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding-top: 3vh;
+      .arrow {
+        position: absolute;
+        right: 0;
+        margin-right: 2vw;
+        color: rgba(128, 128, 128, 0.422);
+      }
+    }
+    li {
+      margin: 0 1vw 0 2vw;
+      padding-top: 2vh;
+      font-weight: 600;
+    }
+    li:hover {
+      a {
+        color: rgb(0, 135, 44);
+        font-weight: 1000;
+      }
+    }
+  }
+
+  .burgerContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    .burger {
+      background-color: rgb(0, 135, 44);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.navbar.Scrolled {
+}
+
+.logo {
+  margin-left: 2vw;
+  position: relative !important;
+
+  img {
+    padding-top: 1vh;
+    padding-left: 3vw;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: absolute;
+    z-index: 2;
+  }
+}

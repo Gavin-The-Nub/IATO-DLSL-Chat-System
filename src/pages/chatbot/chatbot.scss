@@ -1,0 +1,274 @@
+.chat {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+
+  .chatProfile {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    background-color: rgb(0, 135, 44);
+    padding: 10px;
+    align-items: center;
+    .chatPic {
+      background-color: white;
+      color: rgb(0, 135, 44);
+      width: 40px;
+      border-radius: 20px;
+      margin-right: 20px;
+      text-align: center;
+      font-weight: 1000;
+      font-size: x-large;
+    }
+    h1 {
+      color: white;
+      font-weight: 700;
+      font-size: large;
+    }
+    .fs {
+      position: absolute;
+      width: 20px;
+      right: 45px;
+      height: 20px;
+    }
+    .exit {
+      position: absolute;
+      width: 20px;
+      right: 10px;
+      height: 20px;
+    }
+  }
+  .messages {
+    flex: 1; /* Allows it to grow and take up available space */
+    padding: 10px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: calc(100vh - 36vh);
+    /* Adjust this based on your layout */
+
+    /* WebKit Browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+      width: 8px; /* Thin scrollbar width */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Light gray track color */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c1c1c1; /* Medium gray thumb color */
+      border-radius: 10px; /* Rounded edges */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #a1a1a1; /* Darker gray on hover */
+    }
+
+    /* Firefox */
+    scrollbar-width: thin; /* Sets width to thin */
+    scrollbar-color: #c1c1c1 #f1f1f1; /* Thumb color and track color */
+  }
+}
+.chatbox {
+  display: flex;
+  align-items: end;
+  padding-top: 20px;
+
+  .left {
+    margin-left: 10px;
+    width: 40px;
+    flex-shrink: 0;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+    .chatPicBox {
+      background-color: white;
+      color: rgb(0, 135, 44);
+      width: 40px;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 1000;
+      font-size: x-large;
+      border: solid gray 1px;
+    }
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+
+    .up {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      h1 {
+        margin-left: 10px;
+        margin-right: 10px;
+        color: rgb(0, 135, 44);
+        font-weight: 500;
+      }
+      h3 {
+        font-size: 12px;
+        color: gray;
+      }
+    }
+    .down {
+      background-color: rgb(214, 214, 214);
+      margin-left: 10px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px 5px 10px;
+      min-width: min-content;
+      max-width: 300px; /* Keeps the message box within the screen width */
+      word-wrap: break-word; /* Wraps long words onto the next line */
+      h2 {
+        font-size: large;
+        max-width: inherit;
+      }
+    }
+  }
+}
+
+.userMessage {
+  flex-direction: row-reverse; /* Moves the message box to the right */
+
+  .right {
+    .up {
+      justify-content: end;
+      margin-right: 10px;
+    }
+    .down {
+      background-color: rgb(0, 169, 56);
+      color: white;
+    }
+  }
+}
+
+.chatInput {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  left: 0;
+
+  form {
+    width: 100%;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+
+    textarea {
+      width: 100%;
+      border: solid gray 1px;
+      padding: 10px;
+      padding-right: 50px; // To avoid overlapping with the button
+      min-height: 40px; // Initial height
+      max-height: 120px; // Maximum height (adjust as needed)
+      overflow-y: hidden; // Hides the vertical scrollbar
+      box-sizing: border-box;
+      outline: none;
+      resize: none;
+      border-radius: 20px;
+      &:focus {
+        border-color: rgb(0, 135, 44); // Optional: change color on focus
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      background-color: rgb(0, 135, 44);
+      padding: 5px;
+      border-radius: 15px;
+      width: 30px;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+.suggestions {
+  position: absolute;
+  bottom: 60px; // Adjust based on your input height
+  left: 20px; // Adjust based on your layout
+  right: 20px; // Adjust based on your layout
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 10; // Ensure it appears above other elements
+  max-height: 150px; // Limit height
+  overflow-y: auto; // Enable scrolling for suggestions
+
+  .suggestion {
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f0f0; // Change background on hover
+    }
+  }
+}
+
+//FOR CHAT PATH
+.chat.fullscreen-chat {
+  height: 100vh;
+  padding-top: 5vh;
+  display: flex;
+  align-items: center;
+  margin-left: -50px;
+
+  .container {
+    width: 70vw;
+    .messages {
+      max-height: calc(100vh - 25vh);
+    }
+  }
+  .chatInput {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    form {
+      width: 70vw;
+    }
+  }
+}
+@media (max-width: 360px) and (max-height: 740px) {
+  .chat {
+    .userMessages {
+    }
+  }
+  .chat.fullscreen-chat {
+    margin-left: 0;
+    width: 100vw;
+    .container {
+      width: 100vw;
+      padding-top: 45px;
+      .messages {
+        max-height: calc(100vh - 30vh) !important;
+        .down {
+          min-width: none;
+          max-width: 250px !important;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 430px) and (max-height: 932px) {
+  .chat.fullscreen-chat {
+    margin-left: 0;
+    width: 100vw;
+    .container {
+      width: 100vw;
+      padding-top: 40px;
+      .messages {
+        max-height: calc(100vh - 25vh) !important;
+      }
+    }
+  }
+}

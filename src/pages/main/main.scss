@@ -1,0 +1,118 @@
+.main {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  color: white;
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    h1 {
+      font-size: 4.375rem;
+      font-weight: 1000;
+    }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+  }
+
+  .bottom {
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    .links {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 4vw 0 4vw;
+      padding: 2vw;
+      border-radius: 1vw;
+      transition: 0.5s ease;
+
+      &:hover .icon img {
+        transform: translateY(-2vh) rotate(-25deg) scale(1.6);
+      }
+
+      .icon {
+        border: rgba(0, 145, 34, 0.612) 1vw solid;
+        border-radius: 5vw;
+        margin-bottom: 2vw;
+        background-color: white;
+        img {
+          width: 6vw;
+          background-color: rgba(255, 255, 255, 0);
+          padding: 1vw;
+          border-radius: 3.5vw;
+          transition: transform 0.5s;
+        }
+      }
+
+      h1 {
+        font-weight: 1000;
+        font-size: 23px;
+        margin-bottom: 2vh;
+      }
+      p {
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+    .links:hover {
+      background-color: white;
+      h1 {
+        color: rgb(0, 135, 44);
+      }
+      p {
+        color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    .top {
+      margin-top: 20px !important;
+    }
+    .top h1 {
+      font-size: 36px !important;
+    }
+    h2 {
+      font-size: 24px !important;
+      margin-top: 1vh;
+    }
+    .bottom {
+      margin-top: 20px !important;
+      gap: 3vw !important;
+      margin-bottom: 40px;
+      .links {
+        padding-top: 2vh !important;
+        border-radius: 1.3vh !important;
+        &:hover .icon img {
+          transform: translateY(-1vh) rotate(-25deg) scale(1.6) !important;
+        }
+      }
+
+      .icon {
+        border: rgba(0, 145, 34, 0.612) 1vw solid !important;
+        border-radius: 5rem !important;
+        img {
+          width: 5rem !important;
+          border-radius: 5rem !important;
+          padding: 10px !important;
+        }
+      }
+      h1 {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
